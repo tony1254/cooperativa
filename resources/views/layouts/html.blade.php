@@ -67,11 +67,11 @@
     <!-- /FOOTER -->
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="node_modules/jQuery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="node_modules/MDB/js/jquery-3.2.1.min.js"></script> -->
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="node_modules/MDB/js/popper.min.js"></script>
-    <script type="text/javascript" src="node_modules/MDB/js/compiled.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/compiled.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <!-- <script type="text/javascript" src="node_modules/MDB/js/bootstrap.min.js"></script> -->
     <!-- MDB core JavaScript -->

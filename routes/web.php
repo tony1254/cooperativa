@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('personas','PersonController');
+Route::resource('referencias','ReferenceController');
+Route::resource('records','RecordController');
+

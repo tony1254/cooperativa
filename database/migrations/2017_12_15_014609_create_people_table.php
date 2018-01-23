@@ -17,7 +17,7 @@ class CreatePeopleTable extends Migration
             $table->increments('id');
             $table->bigInteger('user_id'); 
             $table->text('lugar');
-            $table->timestamps('fecha');
+            $table->date('fecha');
             $table->text('razonSocial');
             $table->text('cooperativa');
             $table->text('codigoCooperativa');
@@ -49,14 +49,14 @@ class CreatePeopleTable extends Migration
             $table->text('tipoSolicitante');
             $table->text('pepRepresentante');
             $table->text('cpeRepresentante');
-            $table->bigInteger('idPersona'); //oreja de coche
+            $table->bigInteger('person_id'); //oreja de coche llaves foranenas van singular_id
             $table->text('pepSolicitante');
             $table->text('pepOrigen');
             $table->text('cpe');
             $table->bigInteger('telFijo');
             $table->bigInteger('telMovil');
            
-            $table->timestamps();
+            $table->timestamps();//  timestamp solo es un comanndo para poner UPdate_at y create_at no se usa para nada mas
 
         });
     }

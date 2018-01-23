@@ -19,3 +19,5 @@ Auth::routes();
 Route::resource('users', 'UserController') ;
 Route::post('addUser', 'Auth\RegisterController@create')->name('addUser');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('personas','PersonController');

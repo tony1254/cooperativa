@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -36,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -47,6 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -60,16 +62,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
+        $request->validate([
+             'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'rol' => 'required',
+            'password' => 'required|string|min:6|confirmed',
+]);
+        
         $user = User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => bcrypt($data['password']),
+        'name' => $request->name, //$data['name'],
+        'email' => $request->email, //$data['email'],
+        'password' => bcrypt($request->password),
         ]);
+
         $user
             ->roles()
             ->attach(Role::where('name', 'user')->first());
+
+
+        \Alert::success("Registro agregado con exito");
+        return redirect()->route('users.index'); 
+
         return $user;
     }
 }

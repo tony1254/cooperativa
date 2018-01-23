@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
+use App\Record;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class RecordController extends Controller
 {
-
-
-    /**
+     /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,19 +15,16 @@ class PersonController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
-
-
+    }    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-
-        return view('personas/index');
-
+        return view('records/index');
     }
 
     /**
@@ -56,10 +51,10 @@ class PersonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Person $person)
+    public function show(Record $record)
     {
         //
     }
@@ -67,10 +62,10 @@ class PersonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function edit(Person $person)
+    public function edit(Record $record)
     {
         //
     }
@@ -79,10 +74,10 @@ class PersonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Person  $person
+     * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Person $person)
+    public function update(Request $request, Record $record)
     {
         //
     }
@@ -90,10 +85,10 @@ class PersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Person $person)
+    public function destroy(Record $record)
     {
         //
     }

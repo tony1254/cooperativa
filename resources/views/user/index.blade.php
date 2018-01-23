@@ -41,7 +41,7 @@
             {{ $users->links() }}
         </div>
     </div>
-    <div  class="fixed-action-btn " style="top: 60px; right: 2%;">
+    <div  class="fixed-action-btn " style="top: 60px; right: 2%; z-index: 1;">
         <a onclick="  window.location =' {{ url('/register') }}';" href="{{ url('/register') }}" class="btn-floating green waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Nuevo">
                 <i class="fa fa-plus"></i>
             </a>

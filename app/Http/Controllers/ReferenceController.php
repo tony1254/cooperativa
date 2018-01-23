@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
+use App\Reference;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class ReferenceController extends Controller
 {
-
-
-    /**
+ /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,9 +15,7 @@ class PersonController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
-
-
+    }    
     /**
      * Display a listing of the resource.
      *
@@ -27,9 +23,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-
-        return view('personas/index');
-
+        return view('referencias/index');
+        //
     }
 
     /**
@@ -49,17 +44,17 @@ class PersonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Reference  $reference
      * @return \Illuminate\Http\Response
      */
-    public function show(Person $person)
+    public function show(Reference $reference)
     {
         //
     }
@@ -67,10 +62,10 @@ class PersonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Reference  $reference
      * @return \Illuminate\Http\Response
      */
-    public function edit(Person $person)
+    public function edit(Reference $reference)
     {
         //
     }
@@ -79,10 +74,10 @@ class PersonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Person  $person
+     * @param  \App\Reference  $reference
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Person $person)
+    public function update(Request $request, Reference $reference)
     {
         //
     }
@@ -90,10 +85,10 @@ class PersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Reference  $reference
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Person $person)
+    public function destroy(Reference $reference)
     {
         //
     }

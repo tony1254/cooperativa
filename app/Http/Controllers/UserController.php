@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Role;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 use Illuminate\Http\Request;
@@ -25,7 +26,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-         $request->user()->authorizeRoles(['user', 'admin']);
+
+// return dd($request->user()->hasRole('admin'));//devuelve un bool de si el usuario tiene el rol
+       $request->user()->authorizeRoles(['admin']);//permisos de ambos roles ['admin','user']
 
         $users= User::paginate(15);
         return view('user/index')->with('users', $users);

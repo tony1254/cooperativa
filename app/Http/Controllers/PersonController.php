@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Person;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PersonController extends Controller
 {
@@ -27,8 +28,10 @@ class PersonController extends Controller
      */
     public function index()
     {
-
-        return view('personas/index');
+ Auth::user()->authorizeRoles(['admin','user']);//se uso AUTH y la libreria para probar otra forma de uso de autenticacion
+        $persons= Person::paginate(15);
+        return view('personas/index')->with('persons', $persons);
+        // return view('personas/index');
 
     }
 
@@ -40,6 +43,8 @@ class PersonController extends Controller
     public function create()
     {
         //
+        return view('personas/create');
+
     }
 
     /**
@@ -50,7 +55,22 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+             'primerNombre' => 'required|string|max:255',
+             'segundoNombre' => 'string|max:255',
+             'TercerNombre' => 'string|max:255',
+            'fechaNacimiento' => 'required',
+]);
+
+                     
+            $person=new Person();
+
+         $person->primerNombre=$request->input('primerNombre');
+         $person->segundoNombre=$request->input('segundoNombre');
+         $person->fechaNacimiento=$request->input('fechaNacimiento');
+         $person->save();
+       \Alert::success("Registro creado con exito");
+        return redirect()->route('personas.index'); 
     }
 
     /**
@@ -84,7 +104,25 @@ class PersonController extends Controller
      */
     public function update(Request $request, Person $person)
     {
-        //
+         $request->validate([
+             'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+            'rol' => 'required',
+            'password' => 'nullable|string|min:6|confirmed',
+]);
+
+         
+        $role=\DB::table('role_user')->where('user_id', $user->id)
+                                     ->update(['role_id' => $request->input('rol')]);            
+            
+
+         $user->name=$request->input('name');
+         $user->email=$request->input('email');
+         $user->password= ($request->input('password')==null) ? $user->password : bcrypt($request->input('password'));
+         $user->save();
+       \Alert::success("Registro modificado con exito");
+        return redirect()->route('users.index'); 
+
     }
 
     /**
@@ -93,8 +131,16 @@ class PersonController extends Controller
      * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Person $person)
+    public function destroy($person)
     {
+$person=Person::find($person);
+         $person->delete();
+
+        // redirect
+        // Session::flash('message', 'Successfully deleted the nerd!');
+        \Alert::success("Registro eliminado con exito");
+        return redirect()->route('personas.index'); 
+
         //
     }
 }

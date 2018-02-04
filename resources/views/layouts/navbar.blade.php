@@ -26,7 +26,6 @@
             </li>
             @guest
             <li><a class="nav-link  waves-effect waves-light" href="{{ route('login') }}">Login</a></li>
-            <li><a class="nav-link  waves-effect waves-light" href="{{ route('register') }}">Register</a></li>
             @else
             <li class="nav-item avatar dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,6 +74,7 @@
     </ul>
 </li>
 <!--/Social-->
+@if(Auth::check()) 
 <!--Search Form-->
 <li>
     <form class="search-form" role="search">
@@ -87,19 +87,23 @@
 <!-- Side navigation links -->
 <li>
     <ul class="collapsible collapsible-accordion">
+   @if(Auth::user()->hasRole('admin'))
         <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i> Administracion<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="{{url("/users")}}" class="waves-effect">Usuarios</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Registration form</a>
+                        <li><a href="{{url("/users")}}" class="waves-effect">Usuarios</a>
+                        </li>
+
                     </li>
                 </ul>
             </div>
         </li>
-        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i> Instruction<i class="fa fa-angle-down rotate-icon"></i></a>
+    @endif
+        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i> Registro<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul>
+                    <li><a href="{{url("/personas")}}" class="waves-effect">Personas</a>
+                    </li>
                     <li><a href="#" class="waves-effect">For bloggers</a>
                     </li>
                     <li><a href="#" class="waves-effect">For authors</a>
@@ -142,6 +146,23 @@
     </ul>
 </li>
 <!--/. Side navigation links -->
+@else
+<li>
+    <ul class="collapsible collapsible-accordion">
+        <li><a class="collapsible-header waves-effect arrow-r active"><i class="fa fa-chevron-right"></i> Administracion<i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul>
+                        <li><a href="{{ route('login') }}" class="waves-effect">Login</a>
+                        </li>
+                </ul>
+            </div>
+        </li>
+        
+    </ul>
+</li>
+
+@endif
+
 </ul>
 </div>
 <!--/. Sidebar navigation -->

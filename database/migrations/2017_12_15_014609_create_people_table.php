@@ -15,46 +15,46 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('user_id'); 
-            $table->text('lugar');
-            $table->date('fecha');
-            $table->text('razonSocial');
-            $table->text('cooperativa');
-            $table->text('codigoCooperativa');
-            $table->text('primerApellido');
-            $table->text('segundoApellido');
-            $table->text('casadaApellido');
-            $table->text('primerNombre');
-            $table->text('segundoNombre');
-            $table->text('tercerNombre');
-            $table->date('fechaNacimiento');
-            $table->text('nacionalidad');
-            $table->text('otraNacionalidad');
-            $table->text('lugarNacimiento');
-            $table->text('condicionMigratoria');
-            $table->text('genero');
-            $table->text('estadoCivil');
-            $table->text('profesionOficio');
-            $table->text('tipoDocumentoIdentificacion');
-            $table->bigInteger('numeroIdentificacion'); 
-            $table->text('departamentoEmision');
-            $table->text('municipioEmision');
-            $table->text('paisEmision');
-            $table->text('nit');
-            $table->text('email');
-            $table->text('zonaDireccion');
-            $table->text('departamentoDireccion');
-            $table->text('municipioDireccion');
-            $table->text('paisDireccion');
-            $table->text('tipoSolicitante');
-            $table->text('pepRepresentante');
-            $table->text('cpeRepresentante');
-            $table->bigInteger('person_id'); //oreja de coche llaves foranenas van singular_id
-            $table->text('pepSolicitante');
-            $table->text('pepOrigen');
-            $table->text('cpe');
-            $table->bigInteger('telFijo');
-            $table->bigInteger('telMovil');
+            $table->bigInteger('user_id')->nullable()   ; 
+            $table->text('lugar')->nullable()   ;
+            // $table->date('fecha')->nullable()   ; se cancelo porque va en el create_at
+            $table->text('razonSocial')->nullable() ;
+            $table->text('cooperativa')->nullable() ;
+            $table->text('codigoCooperativa')->nullable()   ;
+            $table->text('primerApellido')  ;
+            $table->text('segundoApellido')->nullable() ;
+            $table->text('casadaApellido')->nullable()  ;
+            $table->text('primerNombre')->nullable()    ;
+            $table->text('segundoNombre')->nullable()   ;
+            $table->text('tercerNombre')->nullable()    ;
+            $table->date('fechaNacimiento')->nullable() ;
+            $table->text('nacionalidad')->nullable()    ;
+            $table->text('otraNacionalidad')->nullable()    ;
+            $table->text('lugarNacimiento')->nullable() ;
+            $table->text('condicionMigratoria')->nullable() ;
+            $table->text('genero')->nullable()  ;
+            $table->text('estadoCivil')->nullable() ;
+            $table->text('profesionOficio')->nullable() ;
+            $table->text('tipoDocumentoIdentificacion')->nullable() ;
+            $table->bigInteger('numeroIdentificacion')->nullable()  ; 
+            $table->text('departamentoEmision')->nullable() ;
+            $table->text('municipioEmision')->nullable()    ;
+            $table->text('paisEmision')->nullable() ;
+            $table->text('nit')->nullable() ;
+            $table->text('email')->nullable()   ;
+            $table->text('zonaDireccion')->nullable()   ;
+            $table->text('departamentoDireccion')->nullable()   ;
+            $table->text('municipioDireccion')->nullable()  ;
+            $table->text('paisDireccion')->nullable()   ;
+            $table->text('tipoSolicitante')->nullable() ;
+            $table->text('pepRepresentante')->nullable()    ;
+            $table->text('cpeRepresentante')->nullable()    ;
+            $table->bigInteger('person_id')->nullable() ; //oreja de coche llaves foranenas van singular_id
+            $table->text('pepSolicitante')->nullable()  ;
+            $table->text('pepOrigen')->nullable()   ;
+            $table->text('cpe')->nullable() ;
+            $table->bigInteger('telFijo')->nullable()   ;
+            $table->bigInteger('telMovil')->nullable()  ;
            
             $table->timestamps();//  timestamp solo es un comanndo para poner UPdate_at y create_at no se usa para nada mas
 

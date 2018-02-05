@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="card-header info lighten-1 white-text">
-        Inisio de Sesion
+        Inicio de Sesión
     </div>
      <div class="card-body">
 <div class="row  justify-content-md-center ">

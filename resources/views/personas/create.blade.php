@@ -1,26 +1,25 @@
 @section('title') - Editar Persona  @endsection 
 @extends('layouts.app') @section('content')
  <div class="card-header orange lighten-2 white-text">
-        Editar Usuario
+        Crear Persona
     </div>
-     <div class="card-body">
+    <div class="card-body"></div> 
  {{Form::open(array('route' => 'personas.store'))}}
-
 
 <!-- Nav tabs -->
 <div class="tabs-wrapper"> 
     <ul class="nav classic-tabs tabs-orange" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link waves-light active" data-toggle="tab" href="#panel61" role="tab"><i class="fa fa-user fa-2x" aria-hidden="true"></i><br> Profile</a>
+            <a class="nav-link waves-light active" data-toggle="tab" href="#panel61" role="tab"><i class="fa fa-bullseye fa-2x" aria-hidden="true"></i><br>Razon</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light" data-toggle="tab" href="#panel62" role="tab"><i class="fa fa-heart fa-2x" aria-hidden="true"></i><br> Follow</a>
+            <a class="nav-link waves-light" data-toggle="tab" href="#panel62" role="tab"><i class="fa fa-user fa-2x" aria-hidden="true"></i><br>Persona</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light" data-toggle="tab" href="#panel63" role="tab"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i><br> Contact</a>
+            <a class="nav-link waves-light" data-toggle="tab" href="#panel63" role="tab"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i><br> Referencias</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light" data-toggle="tab" href="#panel64" role="tab"><i class="fa fa-star fa-2x" aria-hidden="true"></i><br> Be awesome</a>
+            <a class="nav-link waves-light" data-toggle="tab" href="#panel64" role="tab"><i class="fa fa-calculator fa-2x" aria-hidden="true"></i><br>Record</a>
         </li>
     </ul>
 </div>
@@ -30,59 +29,40 @@
 
     <!--Panel 1-->
     <div class="tab-pane fade in show active" id="panel61" role="tabpanel">
-       <h3>
-           Datos Personales del Solicitante
+     <h3>
+           Datos de la Persona Obligada
        </h3> 
        <hr>
        <div class="row">
            <div class="col">
-               
                 <div class="md-form form-sm">
-                    {{ Form::label('primerNombre', 'primer Nombre') }}
-                    {{ Form::text('primerNombre', null, array('class' => 'form-control')) }}
+                    {{ Form::label('lugar', 'Lugar') }}
+                    {{ Form::text('lugar', null, array('class' => 'form-control')) }}
                 </div>
-
-           </div>
-           <div class="col">
-               <div class="md-form form-sm">
-                    {{ Form::label('segundoNombre', 'segundo Nombre') }}
-                    {{ Form::text('segundoNombre', null, array('class' => 'form-control')) }}
-               </div>
-           </div>
-           <div class="col">
-               <div class="md-form form-sm">
-                    {{ Form::label('tercerNombre', 'tercer Nombre') }}
-                    {{ Form::text('tercerNombre', null, array('class' => 'form-control')) }}
-               </div>
            </div>
        </div>
        <div class="row">
            <div class="col">
-               
                 <div class="md-form form-sm">
-                    {{ Form::label('primerApellido', 'primer Apellido') }}
-                    {{ Form::text('primerApellido', null, array('class' => 'form-control')) }}
+                    {{ Form::label('razonSocial', 'Razon Social y Nombre Comercial') }}
+                    {{ Form::text('razonSocial', null, array('class' => 'form-control')) }}
                 </div>
-
-           </div>
-           <div class="col">
-               <div class="md-form form-sm">
-                    {{ Form::label('segundoApellido', 'segundo Apellido') }}
-                    {{ Form::text('segundoApellido', null, array('class' => 'form-control')) }}
-               </div>
-           </div>
-           <div class="col">
-               <div class="md-form form-sm">
-                    {{ Form::label('tercerApellido', 'tercer Apellido') }}
-                    {{ Form::text('tercerApellido', null, array('class' => 'form-control')) }}
-               </div>
-
-               <div class="md-form form-sm">
-                    {{Form::label('fechaNacimiento', 'fecha de Nacimiento', array('class' => 'control-label active','style' => 'z-index: -1')) }}
-                    {{Form::date('fechaNacimiento', \Carbon\Carbon::now(), array('class' => 'form-control ','style'=>'height: 35px')) }} <!-- fechaNacimiento_submit valor a guardar -->
-               </div>
            </div>
        </div>
+       <div class="row">
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('cooperativa', 'Nombre de la central, sucursal o agencia') }}
+                    {{ Form::text('cooperativa', null, array('class' => 'form-control')) }}
+                </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('codigoCooperativa', 'Código de agencia o sucursal') }}
+                    {{ Form::text('codigoCooperativa', null, array('class' => 'form-control')) }}
+                </div>
+           </div>
+       </div>         
 <a id='prueba' class="btn green lighten-1" onclick="tabs('panel62')">siguiente</a>
 
     </div>
@@ -90,37 +70,239 @@
 
     <!--Panel 2-->
     <div class="tab-pane fade" id="panel62" role="tabpanel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, .wopariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+        <h3>
+           Datos Personales del Solicitante
+       </h3> 
+       <hr>
+       <div class="row">
+           <div class="col">
+               
+                <div class="md-form form-sm">
+                    {{ Form::label('primerNombre', 'Primer Nombre') }}
+                    {{ Form::text('primerNombre', null, array('class' => 'form-control')) }}
+                </div>
+
+           </div>
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('segundoNombre', 'Segundo Nombre') }}
+                    {{ Form::text('segundoNombre', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('tercerNombre', 'Otros Nombres') }}
+                    {{ Form::text('tercerNombre', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               
+                <div class="md-form form-sm">
+                    {{ Form::label('primerApellido', 'Primer Apellido') }}
+                    {{ Form::text('primerApellido', null, array('class' => 'form-control')) }}
+                </div>
+
+           </div>
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('segundoApellido', 'Segundo Apellido') }}
+                    {{ Form::text('segundoApellido', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('casadaApellido', 'Apellido de Casada') }}
+                    {{ Form::text('casadaApellido', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+       </div>
+
+       <div class="row">
+          <div class="col">
+               <div class="md-form form-sm">
+                    {{Form::label('fechaNacimiento', 'Fecha de Nacimiento', array('class' => 'control-label active','style' => 'z-index: -1')) }}
+                    {{Form::date('fechaNacimiento', \Carbon\Carbon::now(), array('class' => 'form-control ','style'=>'height: 35px')) }} <!-- fechaNacimiento_submit valor a guardar -->
+               </div>
+          </div> 
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('nacionalidad', 'Nacionalidad') }}
+                    {{ Form::text('nacionalidad', null, array('class' => 'form-control')) }}
+               </div>
+           </div>  
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('otraNacionalidad', 'Otra Nacionalidad') }}
+                    {{ Form::text('otraNacionalidad', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+               <div class="md-form form-sm">
+                    {{ Form::label('lugarNacimiento', 'Lugar de Nacimiento') }}
+                    {{ Form::text('lugarNacimiento', null, array('class' => 'form-control')) }}
+               </div>
+           </div>                                   
+       </div>
+
+       <div class="row">
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('genero', 'Género') }}
+                    {{ Form::text('genero', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('estadoCivil', 'Estado Civil') }}
+                    {{ Form::text('estadoCivil', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+            <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('profesionOficio', 'Profesión u Oficio') }}
+                    {{ Form::text('profesionOficio', null, array('class' => 'form-control')) }}
+               </div>
+           </div>                                      
+       </div>
+        <h5>
+           Documento de Identificación:
+       </h5> 
+       <div class="row">
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('tipoDocumentoIdentificacion', 'Tipo') }}
+                    {{ Form::text('tipoDocumentoIdentificacion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('numeroIdentificacion', 'Número') }}
+                    {{ Form::number('numeroIdentificacion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+            <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('departamentoEmision', 'Departamento Emisión') }}
+                    {{ Form::text('departamentoEmision', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('municipioEmision', 'Municipio Emisión') }}
+                    {{ Form::text('municipioEmision', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('paisEmision', 'paisEmision') }}
+                    {{ Form::text('paisEmision', null, array('class' => 'form-control')) }}
+               </div>
+           </div>                                      
+       </div>
+
+       <div class="row">
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('nit', 'NIT') }}
+                    {{ Form::text('nit', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('telFijo', 'telFijo') }}
+                    {{ Form::number('telFijo', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+            <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('telMovil', 'telMovil') }}
+                    {{ Form::number('telMovil', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('email', 'email') }}
+                    {{ Form::email('email', null, array('class' => 'form-control')) }}
+               </div>
+           </div>                                      
+       </div>
+
+        <h5>
+           Dirección particular completa:
+       </h5> 
+
+       <div class="row">
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('zonaDireccion', 'Dirección Completa') }}
+                    {{ Form::text('zonaDireccion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('departamentoDireccion', 'Departamento') }}
+                    {{ Form::text('departamentoDireccion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+            <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('municipioDireccion', 'Municipio') }}
+                    {{ Form::text('municipioDireccion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>
+           <div class="col">
+                <div class="md-form form-sm">
+                    {{ Form::label('paisDireccion', 'Pais') }}
+                    {{ Form::text('paisDireccion', null, array('class' => 'form-control')) }}
+               </div>
+           </div>                                      
+       </div>
+
+
 
 <a id='prueba' class="btn orange" onclick="tabs('panel61')">atras</a>
 <a id='prueba' class="btn green lighten-1" onclick="tabs('panel63')">siguiente</a>
-    {{ Form::submit('Guardar', array('class' => 'btn green ')) }}
 
     </div>
     <!--/.Panel 2-->
 
     <!--Panel 3-->
     <div class="tab-pane fade" id="panel63" role="tabpanel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+       <h3>
+           REFERENCIAS DEL SOLICITANTE
+       </h3> 
+
+
+
+<a id='prueba' class="btn orange" onclick="tabs('panel62')">atras</a>
+<a id='prueba' class="btn green lighten-1" onclick="tabs('panel64')">siguiente</a>
 
     </div>
     <!--/.Panel 3-->
 
     <!--Panel 4-->
     <div class="tab-pane fade" id="panel64" role="tabpanel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+
+       <h3>
+           INFORMACIÓN ECONOMICO-FINANCIERA DEL SOLICITANTE
+       </h3> 
+      
+<a id='prueba' class="btn orange" onclick="tabs('panel63')">atras</a>
+    {{ Form::submit('Guardar', array('class' => 'btn green ')) }}
+
 
     </div>
     <!--/.Panel 4-->
-
 </div>
 
 
 
 
 
-
+<!-- 
     <div class="md-form form-sm">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', null, array('class' => 'form-control')) }}
@@ -147,7 +329,7 @@
 
 {{ Form::close() }}
 </div>
-@endsection
+@endsection -->
 
 @section('script')
 <script type="text/javascript">

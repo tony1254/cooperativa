@@ -4,7 +4,7 @@
     <thead class="blue-grey lighten-4">
         <tr>
             <th>#</th>
-            <th>Username</th>
+            <th>Usuario</th>
             <th>E-Mail</th>
             <th>Acciones</th>
         </tr>

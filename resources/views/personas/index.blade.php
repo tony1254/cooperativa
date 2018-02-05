@@ -4,11 +4,11 @@
     <thead class="blue-grey lighten-4">
         <tr>
             <th>#</th>
-            <th>primerNombre</th>
-            <th>segundoNombre</th>
-            <th>segundoNombre</th>
-            <th>segundoNombre</th>
-            <th>segundoNombre</th>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>E-mail</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -24,7 +24,7 @@
             <td>
                 <div class="row">
                     <div class="col">
-                        <a class="btn-floating orange  btn-sm " href="persons/{{$person->id}}/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a class="btn-floating orange  btn-sm " href=><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     </div>
                     <div class="col">
                         {{ Form::open(array('url' => 'personas/' . $person->id, 'id' => 'delete' . $person->id)) }} 

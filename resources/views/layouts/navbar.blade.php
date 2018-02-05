@@ -7,9 +7,8 @@
         <span class="navbar-toggler-icon"></span>
     </a>
     <!-- Navbar brand -->
-    <a class="navbar-brand " href="/">
-        <img src="{{url("/content/T.png")}}" height="40" alt="">
-        
+    <a class="navbar-brand " href="/"><img src="{{url("/content/T.png")}}" height="40" alt=""> COOPERATIVA INTEGRAL DE AHORRO Y CREDITO "MAGISTERIO PETENERO R.L."
+         
     </a>
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -21,24 +20,24 @@
         <!-- Links -->
         <!-- iconos -->
         <ul class="navbar-nav ml-auto nav-flex-icons align-self-end">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link waves-effect waves-light">1 <i class="fa fa-envelope"></i></a>
-            </li>
+            </li> -->
             @guest
-            <li><a class="nav-link  waves-effect waves-light" href="{{ route('login') }}">Login</a></li>
+            <li><a class="nav-link  waves-effect waves-light" href="{{ route('login') }}">Iniciar Sesión</a></li>
             @else
             <li class="nav-item avatar dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ Auth::user()->name }} 
-                    <img  src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="img-fluid rounded-circle z-depth-0">
+                    <img  src="https://home.blazingumbra.com/wiki/images/thumb/d/d1/Nobiopic.png/300px-Nobiopic.png" class="img-fluid rounded-circle z-depth-0">
                     <i class="fa fa-cog" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-purple" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-                    <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
+                    <!-- <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
                     <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-                    <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a> -->
                     <a class="dropdown-item waves-effect waves-light" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fa fa-power-off red-text" aria-hidden="true"></i> Logout
+                        <i class="fa fa-power-off red-text" aria-hidden="true"></i> Salir
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
@@ -66,12 +65,12 @@
             <!--/. Logo -->
             <!--Social-->
         <li>
-    <ul class="social">
+    <!-- <ul class="social">
         <li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
         <li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
         <li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
         <li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
-    </ul>
+    </ul> -->
 </li>
 <!--/Social-->
 @if(Auth::check()) 
@@ -102,35 +101,31 @@
         <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i> Registro<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="{{url("/personas")}}" class="waves-effect">Personas</a>
+                    <li><a href="{{url("/personas")}}" class="waves-effect">Socios</a>
                     </li>
-                    <li><a href="#" class="waves-effect">For bloggers</a>
+                    <!-- <li><a href="#" class="waves-effect">For bloggers</a>
                     </li>
                     <li><a href="#" class="waves-effect">For authors</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </li>
-        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-calendar"></i>Ahorro<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#" class="waves-effect">Introduction</a>
+                    <li><a href="#" class="waves-effect">Asociar Ahorro</a>
                     </li>
-                    <li><a href="#" class="waves-effect">Monthly meetings</a>
-                    </li>
+                    <!-- <li><a href="#" class="waves-effect">Monthly meetings</a>
+                    </li> -->
                 </ul>
             </div>
         </li>
-        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-edit"></i> Préstamos<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#" class="waves-effect">FAQ</a>
+                    <li><a href="#" class="waves-effect">Registrar Préstamo</a>
                     </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">FAQ</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
+<!--                     <li><a href="#" class="waves-effect">Write a message</a>
                     </li>
                     <li><a href="#" class="waves-effect">FAQ</a>
                     </li>
@@ -140,9 +135,29 @@
                     </li>
                     <li><a href="#" class="waves-effect">Write a message</a>
                     </li>
+                    <li><a href="#" class="waves-effect">FAQ</a>
+                    </li>
+                    <li><a href="#" class="waves-effect">Write a message</a>
+                    </li> -->
                 </ul>
             </div>
         </li>
+        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-calculator"></i>Contable<i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#" class="waves-effect">Cálculos</a>
+                    </li>
+                    <!-- <li><a href="#" class="waves-effect">Monthly meetings</a>
+                    </li> -->
+                </ul>
+            </div>
+        </li>
+
+
+
+
+
+
     </ul>
 </li>
 <!--/. Side navigation links -->
